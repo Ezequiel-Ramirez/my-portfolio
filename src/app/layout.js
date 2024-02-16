@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
+import {montserrat} from './ui/fonts.js'
 import "./globals.css";
 import styles from "./home.module.css";
 import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] }); //fuente de letra desde google
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} >
       <header className={styles.header}>
         <nav className={styles.nav}>
           <a href="https://nextjs.org/docs" className={styles.link}>
