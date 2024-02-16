@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import styles from "./home.module.css";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,38 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <a href="https://nextjs.org/docs" className={styles.link}>
+            Docs
+          </a>
+          <a href="https://nextjs.org/learn" className={styles.link}>
+            Learn
+          </a>
+          <a href="https://vercel.com/templates" className={styles.link}>
+            Templates
+          </a>
+          <a href="https://vercel.com/new" className={styles.link}>
+            Deploy
+          </a>
+        </nav>
+      </header>
+      {children}
+      <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          <Image
+          width={180}
+          height={37}
+           src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+        </a>
+      </footer>
+      </body>
     </html>
   );
 }
