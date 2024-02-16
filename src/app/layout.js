@@ -3,6 +3,7 @@ import {montserrat} from './ui/fonts.js'
 import "./globals.css";
 import styles from "./home.module.css";
 import Image from "next/image";
+import Link from "next/link.js";
 
 const inter = Inter({ subsets: ["latin"] }); //fuente de letra desde google
 
@@ -17,23 +18,23 @@ export default function RootLayout({ children }) {
       <body className={inter.className} >
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <a href="https://nextjs.org/docs" className={styles.link}>
+          <Link href="https://nextjs.org/docs" className={styles.link}>
             Docs
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.link}>
+          </Link>
+          <Link href="https://nextjs.org/learn" className={styles.link}>
             Learn
-          </a>
-          <a href="https://vercel.com/templates" className={styles.link}>
+          </Link>
+          <Link href="https://vercel.com/templates" className={styles.link}>
             Templates
-          </a>
-          <a href="https://vercel.com/new" className={styles.link}>
+          </Link>
+          <Link href="https://vercel.com/new" className={styles.link}>
             Deploy
-          </a>
+          </Link>
         </nav>
       </header>
       {children}
       <footer className={styles.footer}>
-        <a
+        <Link
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
           width={180}
           height={37}
            src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        </Link>
       </footer>
       </body>
     </html>
